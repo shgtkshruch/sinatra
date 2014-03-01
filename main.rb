@@ -1,11 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'slim'
 
-get '/from/*/to/*' do |f, t|
-  "from #{f} to #{t}"
-end
-
-
-get %r{/users/([0-9]*)} do |i|
-  "user id = #{i}"
+get '/:name' do |n|
+  @name = n
+  @title = "main index"
+  slim :index  
 end
