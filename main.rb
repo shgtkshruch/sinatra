@@ -1,22 +1,11 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-get '/' do
-  'wellcome root'
+get '/from/*/to/*' do |f, t|
+  "from #{f} to #{t}"
 end
 
-get '/main' do
-  'wellcome main'
-end
 
-get '/about' do
-  'wellcome about page'
-=begin
-get '/hello/:name' do
-  "hello #{params[:name]}"
-end
-=end
-
-get '/hello/:name' do |n|
-  "hello #{n}"
+get %r{/users/([0-9]*)} do |i|
+  "user id = #{i}"
 end
