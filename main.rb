@@ -11,4 +11,12 @@ end
 
 get '/about' do
   'wellcome about page'
+=begin
+get '/hello/:name' do
+  "hello #{params[:name]}"
+end
+=end
+
+get '/hello/:name' do |n|
+  "hello #{n}"
 end
